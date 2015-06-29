@@ -1,0 +1,36 @@
+/*  Variables - Sass Way */
+$blue: blue;
+
+:root {
+    /* Variables - CSS Next */
+    --red: red;
+}
+
+.userinfo {
+	.username {
+		color: var(--red);
+	}
+
+	.numrepos {
+		color: $blue;
+	}
+}
+
+
+@define-mixin icon $network, $color: blue {
+    .icon.is-$(network) {
+        color: $color;
+        @mixin-content;
+    }
+    .icon.is-$(network):hover {
+        color: white;
+        background: $color;
+    }
+}
+
+@mixin icon twitter {
+    font-size: 10px;
+}
+@mixin icon youtube, red {
+    font-size: 12px;
+}
